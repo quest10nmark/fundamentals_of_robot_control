@@ -1,9 +1,8 @@
 import csv
 import matplotlib
-matplotlib.use("Agg")  # сохраняем файл без графического окна
+matplotlib.use("Agg")  
 import matplotlib.pyplot as plt
 
-# ===== Загружаем =====
 results = []
 with open("tradeoff_results.csv","r") as f:
     for r in csv.DictReader(f):
@@ -13,7 +12,7 @@ with open("tradeoff_results.csv","r") as f:
             r["phi"] = float(r["phi"])
         results.append(r)
 
-# ===== График =====
+
 plt.figure(figsize=(8,6))
 for r in results:
     if r["Controller"] == "ID":
